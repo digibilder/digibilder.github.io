@@ -10,17 +10,19 @@
     };
 
     
-    formElement.onsubmit = async (e) => {
+    formElement.onsubmit = async function(e) {
         e.preventDefault();
         fetch('https://getform.io/f/1f6033e2-7ce1-4cda-90e0-c5f625dcf093', {
             method: 'POST',
             body: new FormData(formElement)
         }).then((response) => {
             if (!response.ok) {
-                throw new Error(response);
+                throw new Error();
             }
             successMessage.classList.remove('hidden');
             errorMessage.classList.add('hidden');
+            this.reset()
+            submitButton.setAttribute('disabled', 'disabled');
         }).catch((err) => {
             successMessage.classList.add('hidden');
             errorMessage.classList.remove('hidden');
