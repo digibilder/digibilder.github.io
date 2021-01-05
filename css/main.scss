@@ -43,7 +43,11 @@ $theme-dark: #222;
         "base"
 ;
 
-.pricing-table{
+.navbar-brand {
+  margin-top: 5px;
+}
+
+.pricing-table {
   background-color: #eee;
   font-family: 'Montserrat', sans-serif;
 }
