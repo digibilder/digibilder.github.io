@@ -43,6 +43,16 @@ $theme-dark: #222;
         "base"
 ;
 
+#contact {
+  background-color: lightgrey;
+
+  .container {
+    background: white;
+    border-radius: 10px;
+    padding: 2em;
+  }
+}
+
 .navbar-brand {
   margin-top: 5px;
 }
