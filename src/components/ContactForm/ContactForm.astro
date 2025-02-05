@@ -112,16 +112,15 @@ import PrimaryBtn from '../Lego/PrimaryBtn.astro';
 </div>
 
 <script>
-	import { actions } from 'astro:actions';
-
 	const form = document.getElementById('order-form') as HTMLFormElement;
 
-	//event listeners
+	// Temporary form submission handler
 	form.addEventListener('submit', async (e) => {
 		e.preventDefault();
 		const formData = new FormData(form);
-		const res = await actions.order(formData);
 
-		console.log(res);
+		// For now, just log the form data
+		console.log('Form submitted:', Object.fromEntries(formData));
+		alert('Tack för ditt meddelande! Vi återkommer så snart som möjligt.');
 	});
 </script>
