@@ -19,6 +19,12 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libvips-dev
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
@@ -26,6 +32,7 @@ jobs:
           node-version: 20
           # The Node package manager that should be used to install dependencies and build your site
           package-manager: pnpm@latest
+          pnpm-version: 8.x.x
 
   deploy:
     needs: build
