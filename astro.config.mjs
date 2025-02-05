@@ -5,9 +5,8 @@ import UnoCSS from 'unocss/astro';
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  // We don't need base with custom domain
-  site: 'https://digibilder.se', // Set your site URL
+  site: 'https://digibilder.se',
   integrations: [UnoCSS({
-    injectReset: true // or a path to the reset file
+    injectReset: true
   }), sitemap()]
 });

@@ -4,7 +4,7 @@ on:
   # Trigger the workflow every time you push to the `master` branch
   push:
     branches: [master]
-  # Allow you to run this workflow manually from the Actions tab on GitHub.
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
 # Allow this job to clone the repo and create a page deployment
@@ -19,31 +19,13 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
         with:
-          version: 8
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
+          # The specific version of Node that should be used to build your site
           node-version: 20
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build site
-        run: pnpm run build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+          # The Node package manager that should be used to install dependencies and build your site
+          package-manager: pnpm@latest
 
   deploy:
     needs: build
