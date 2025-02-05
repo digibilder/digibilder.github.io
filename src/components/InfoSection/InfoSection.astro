@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import InfoImg from '../../static/header.jpg';
+import PrimaryBtn from '../Lego/PrimaryBtn.astro';
+---
+
+<section
+	id='digitalisera'
+	flex='~ col md:row'
+	justify-between
+	border-y='~ stone-300'
+	text='stone-800'
+	py='26'
+	px-8
+	space-x='0 md:16'>
+	<div
+		order='
+	1
+	md:0'
+		w='md:6/10'
+		h='full'>
+		<Image
+			src={InfoImg}
+			alt='Hero'
+			loading='eager'
+			class='object-cover xl:aspect-video rounded-md'
+		/>
+	</div>
+	<div
+		max-w-2xl
+		w='full md:4/10'
+		mb='8 md:0'
+		class='space-y-4'>
+		<h2
+			font-bold
+			tracking-tighter
+			text='2xl xl:3xl'>
+			Digitalisera bilderna
+		</h2>
+
+		<p
+			font-thin
+			tracking-tight
+			text='stone-600 stroke-sm'
+			text='sm/relaxed xl:base/relaxed'>
+			Många av oss har nog många gamla minnen i form av fotografier. Säkert
+			många som också har dessa i fyllda album. Tanken har säkert slagit in att
+			scanna dessa men tyvärr har inte tiden funnits eller redskap för att kunna
+			göra detta på ett tidseffektivt sätt. Hos oss hjälper vi till att scanna
+			era foton och laddar upp dessa säkert på molnet som bara du har tillgång
+			till. På detta sätt så försvinner inte bilderna och man kan återskapa
+			ifall något händer med originalen.
+		</p>
+		<PrimaryBtn
+			css='!text-sm '
+			content='Kontakta oss så berättar vi mer'
+			link='#kontakta-oss'
+		/>
+	</div>
+</section>

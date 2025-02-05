@@ -1,0 +1,32 @@
+---
+const { header, content, icon, order } = Astro.props;
+---
+
+<div
+	flex='~ col'
+	border='~ stone-300'
+	p-8
+	bg-white
+	rounded-md
+	shadow-md
+	gap-4>
+	<div
+		flex
+		space-x-2>
+		<div
+			w-8
+			h-8
+			class={icon}>
+		</div>
+		<h3
+			font-semibold
+			text='xl xl:2xl'>
+			{header}
+		</h3>
+	</div>
+	<p
+		font-thin
+		text='sm md:base/relaxed stroke-sm stone-700'>
+		{content}
+	</p>
+</div>

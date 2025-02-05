@@ -1,0 +1,24 @@
+---
+const { link, content, css } = Astro.props;
+---
+
+<a href={link}>
+	<button
+		mr-auto
+		transition
+		border='~ hover:blue-700'
+		bg-gradient-to-t
+		from-blue-700
+		to-blue-600
+		w='3/5 md:unset'
+		py-3
+		px-6
+		mt-6
+		rounded='md'
+		shadow='sm hover:lg'
+		text='sm md:md  stone-50 '
+		font='medium'
+		class=`${css} hover:scale-105`
+		>{content}</button
+	>
+</a>

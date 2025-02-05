@@ -1,0 +1,57 @@
+---
+import StepCard from './StepCard.astro';
+---
+
+<div
+	id='hur-fungerar-det-?'
+	mx-auto
+	py-26
+	px-4
+	border-b='~ stone-300'
+	space-y-16>
+	<h2
+		text='3xl lg:4xl'
+		font-bold>
+		Hur fungerar det?
+	</h2>
+	<div
+		grid='~ cols-1 md:cols-2 lg:cols-3 '
+		gap-8>
+		<StepCard
+			order='1'
+			header='Kontakta oss'
+			content='Vi diskuterar tillsammans hur vi löser detta på bästa sätt'
+			icon='i-icon-park:message-one'
+		/>
+		<StepCard
+			order='2'
+			header='Skicka oss bilderna'
+			content='You can use this theme as is, or you can make changes!'
+			icon='i-noto:package'
+		/>
+		<StepCard
+			order='3'
+			header='Bildscanning'
+			content='Vi hanterar bilderna varsamt under hela processen'
+			icon='i-fxemoji:documentwithpicture'
+		/>
+		<StepCard
+			order='4'
+			header='Ladda upp till molnet'
+			content='Instruktioner hur man kommer åt skickas till er'
+			icon='i-openmoji:cloud'
+		/>
+		<StepCard
+			order='5'
+			header='Leverans'
+			content='Originalen skickas tillbaka efter att fakturan är betald'
+			icon='i-noto:delivery-truck'
+		/>
+		<StepCard
+			order='6'
+			header='Bilderna i säkert förvar'
+			content='Originalen skickas tillbaka efter att fakturan är betald'
+			icon='i-noto:locked-with-key'
+		/>
+	</div>
+</div>

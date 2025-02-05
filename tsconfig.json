@@ -1,8 +1,4 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "types": ["@cloudflare/workers-types/2023-07-01"],
-    "jsx": "react-jsx",
-    "jsxImportSource": "@builder.io/qwik"
-  }
+	"extends": "astro/tsconfigs/base",
+	"compilerOptions": {}
 }

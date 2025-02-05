@@ -1,0 +1,127 @@
+---
+import PrimaryBtn from '../Lego/PrimaryBtn.astro';
+---
+
+<div
+	id='kontakta-oss'
+	rounded-lg
+	border='~ stone-200'
+	bg-stone-100
+	shadow-sm
+	mx='4 md:auto'
+	my-26
+	max-w='2xl'
+	p='8 md:16'
+	data-v0-t='card'>
+	<div>
+		<h3
+			mb-8
+			text='2xl md:3xl balance'
+			font-semibold
+			tracking-tight>
+			Kontakta oss för offert
+		</h3>
+	</div>
+	<div>
+		<form
+			id='order-form'
+			class='space-y-4'>
+			<div class='space-y-2'>
+				<label
+					ml-1
+					class='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+					for='name'>
+					Ditt namn
+				</label>
+				<input
+					class='flex h-10 w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-input'
+					name='name'
+					id='name'
+					placeholder='Namn'
+					type='text'
+					required
+					oninvalid="this.setCustomValidity('Du måste fylla i ett namn.')"
+					oninput="this.setCustomValidity('')"
+				/>
+			</div>
+			<div class='space-y-2'>
+				<label
+					ml-1
+					class='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+					for='email'>
+					Epost
+				</label>
+				<input
+					class='flex h-10 w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-input'
+					name='email'
+					id='email'
+					placeholder='E-post'
+					type='email'
+					required
+					oninvalid="this.setCustomValidity('Du måste fylla i en giltig e-post adress.')"
+					oninput="this.setCustomValidity('')"
+				/>
+			</div>
+			<div
+				flex='~ col'
+				class='space-y-2'>
+				<label
+					ml-1
+					class='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+					for='service'>
+					Vilken inskanningstjänst?
+				</label>
+
+				<select
+					name='service'
+					id='service'
+					aria-hidden='true'
+					required
+					tabindex='-1'
+					p-1
+					rounded-md
+					border='~ stone-300'
+					text=' stroke-sm stone-600'>
+					<option>Lösa bilder</option>
+					<option>Album</option>
+					<option>Andra behov</option>
+					<option>Övrigt</option>
+				</select>
+			</div>
+			<div class='space-y-2'>
+				<label
+					ml-1
+					class='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+					for='message'>
+					Meddelande
+				</label>
+				<textarea
+					class='flex w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px] border-2 border-input'
+					name='message'
+					id='message'
+					placeholder='Skriv ditt meddelande här'
+				></textarea>
+				<PrimaryBtn
+					content='Skicka'
+					css='!text-sm'
+					type='submit'
+				/>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script>
+	import { actions } from 'astro:actions';
+
+	const form = document.getElementById('order-form') as HTMLFormElement;
+
+	//event listeners
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		const formData = new FormData(form);
+		const res = await actions.order(formData);
+
+		console.log(res);
+	});
+</script>

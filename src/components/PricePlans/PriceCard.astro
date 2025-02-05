@@ -1,0 +1,134 @@
+---
+const { title, price, currency, desc, deliveryTime, topPick, link, icon } =
+	Astro.props;
+
+const enableTopPick = topPick
+	? 'border !border-blue-400 border-t border-t-blue-500 border-t-8'
+	: null;
+---
+
+<a href={link}>
+	<div
+		relative
+		flex='~ col'
+		items-center
+		justify-center
+		mb-2
+		py-8
+		px-4
+		bg-white
+		shadow='md hover:lg'
+		rounded-md
+		min-h-sm
+		-translate-y='hover:1'
+		transition
+		border='~ stone-400'
+		class={enableTopPick}>
+		{
+			topPick ? (
+				<div
+					absolute
+					top-0
+					px-3
+					py-1
+					text='sm white'
+					rounded-md
+					bg-gradient-to-r
+					from-blue-800
+					to-blue-500
+					class='left-1/2 -translate-x-1/2
+			-translate-y-1/2'>
+					Populärt val
+				</div>
+			) : null
+		}
+		<div>
+			<div
+				h-16
+				w-16
+				mb-4
+				mx-auto
+				class={icon}>
+			</div>
+			<h3
+				text='xl lg:2xl center stroke-sm'
+				font-semibold
+				mb-4>
+				{title}
+			</h3>
+
+			<ul
+				border-t='~ stone-300'
+				pt-4
+				mt-4
+				space-y-2>
+				<li
+					flex
+					mb-4
+					font-light
+					text='base lg:lg stone-700 stroke-sm'
+					items-center
+					text-balance>
+					{desc}
+				</li>
+				<li
+					flex
+					items-center
+					font-thin
+					text='base lg:lg stroke-sm'>
+					<span
+						mr-2
+						h-6
+						w-6
+						class='i-noto:delivery-truck'
+					></span>
+					<span
+						text-stroke-none
+						font-semibold
+						mr-2
+						>Leverans:</span
+					>
+					{deliveryTime}
+				</li>
+				<li
+					flex
+					items-center
+					font-thin
+					text='base lg:lg stroke-sm'>
+					<span
+						mr-2
+						h-6
+						w-6
+						class='i-openmoji:cloud'
+					></span>
+					<span
+						text-stroke-none
+						font-semibold
+						mr-2
+						>Molnlagring:</span
+					>
+					<span
+						bg-emerald-600
+						class='i-tabler:square-rounded-check-filled'
+					></span>
+				</li>
+			</ul>
+			{
+				price ? (
+					<div
+						mt-4
+						border-t='~ stone-300'
+						pt-4
+						text='stone-800 center 2xl'>
+						<span
+							text='4xl lg:5xl'
+							font-bold>
+							{price}
+						</span>
+						{currency}
+					</div>
+				) : null
+			}
+		</div>
+	</div>
+</a>

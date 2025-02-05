@@ -1,0 +1,50 @@
+---
+import PriceCard from './PriceCard.astro';
+---
+
+<section
+	id='prisexempel'
+	border-b='~ stone-300'
+	class='w-full py-26'>
+	<div
+		space-y-16
+		class='container px-4 md:px-6'>
+		<div space-y-2>
+			<h3
+				text='3xl lg:4xl'
+				font-bold>
+				Prisexempel
+			</h3>
+			<p text='sm md:base'>Här är några pris exempel</p>
+		</div>
+		<div class='grid grid-cols-1 gap-6 mt-8 xl:grid-cols-3'>
+			<PriceCard
+				icon='i-vscode-icons:file-type-image'
+				title='Enbart Bilder'
+				price='999'
+				currency='sek'
+				desc='Bilder i ett fodral eller som ligger lösa'
+				deliveryTime='1-2 veckor'
+				topPick
+				link='#kontakta-oss'
+			/>
+			<PriceCard
+				icon='i-twemoji:closed-book'
+				title='Album'
+				price='1999'
+				currency='sek'
+				desc='Bilder i flera album'
+				deliveryTime='2-3 veckor'
+				link='#kontakta-oss'
+			/>
+			<PriceCard
+				icon='i-noto:handshake-medium-light-skin-tone-light-skin-tone'
+				title='Andra behov'
+				price=''
+				desc='Vi anpassar oss efter erat behov'
+				deliveryTime='Överenskommelse'
+				link='#kontakta-oss'
+			/>
+		</div>
+	</div>
+</section>

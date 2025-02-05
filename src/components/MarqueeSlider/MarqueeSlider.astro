@@ -1,0 +1,142 @@
+---
+import MarqueeContent from '../MarqueeSlider/MarqueeContent.astro';
+
+import Img1 from '../../static/portfolio/1.jpg';
+import Img2 from '../../static/portfolio/2.jpg';
+import Img3 from '../../static/portfolio/3.jpg';
+import Img4 from '../../static/portfolio/4.jpg';
+import Img5 from '../../static/portfolio/5.jpg';
+import Img6 from '../../static/portfolio/6.jpg';
+
+const { css } = Astro.props;
+---
+
+<style>
+	.fade::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 20%;
+		background: linear-gradient(to bottom, #f8f8f8, transparent);
+		z-index: 1;
+	}
+	.fade::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 20%;
+		background: linear-gradient(to top, #f7f7f7, transparent);
+		z-index: 1;
+	}
+
+	@media only screen and (max-width: 767px) {
+		.fade::before {
+			background: linear-gradient(to bottom, #f7f7f7, transparent);
+		}
+		.fade::after {
+			background: linear-gradient(to top, #f8f8f8, transparent);
+		}
+	}
+</style>
+
+<div
+	mx-auto
+	overflow-hidden
+	relative
+	row-span='2'
+	w='19/20 sm:3/5 md:full'
+	h='7/10 md:8/10 xl:9/10'
+	mt='10 md:0'
+	class=`fade ${css}`>
+	<div
+		absolute
+		bg-stone-800
+		class='left-0 -top-1/2'>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img1}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img2}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img3}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img1}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img2}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img3}
+		/>
+	</div>
+	<div
+		absolute
+		bg-stone-800
+		class='top-0 left-1/2 -translate-1/2'>
+		<MarqueeContent
+			direction='down'
+			imgUrl={Img4}
+		/>
+		<MarqueeContent
+			direction='down'
+			imgUrl={Img6}
+		/>
+		<MarqueeContent
+			direction='down'
+			imgUrl={Img3}
+		/>
+		<MarqueeContent
+			direction='down'
+			imgUrl={Img4}
+		/>
+		<MarqueeContent
+			direction='down'
+			imgUrl={Img6}
+		/>
+		<MarqueeContent
+			direction='down'
+			imgUrl={Img3}
+		/>
+	</div>
+	<div
+		absolute
+		bg-stone-800
+		class='right-0 -top-1/2'>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img4}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img5}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img6}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img4}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img5}
+		/>
+		<MarqueeContent
+			direction='up'
+			imgUrl={Img6}
+		/>
+	</div>
+</div>
