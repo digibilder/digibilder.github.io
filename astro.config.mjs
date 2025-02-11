@@ -6,7 +6,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  output: "static",
+  output: "server",
   site: 'https://digibilder.se',
 
   integrations: [UnoCSS({
