@@ -1,6 +1,8 @@
 # Wrangler configuration for Digibilder.se
 name = "digibilder"
 main = "./dist/_worker.js"
+compatibility_date = "2025-02-26"
+compatibility_flags = ["nodejs_compat"]
 
 # Route all requests to the Worker
 route = { pattern = "*", zone_name = "digibilder.se" }

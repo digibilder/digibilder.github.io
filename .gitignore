@@ -19,3 +19,10 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Wrangler
+.wrangler/
+.dev.vars
+
+# Avoid committing duplicated static assets
+public/static/

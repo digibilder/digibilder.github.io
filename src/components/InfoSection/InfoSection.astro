@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import InfoImg from '../../static/header.jpg';
+// Removed Image import
+// Use static image path
 import PrimaryBtn from '../Lego/PrimaryBtn.astro';
 ---
 
@@ -19,8 +19,8 @@ import PrimaryBtn from '../Lego/PrimaryBtn.astro';
 	md:0'
 		w='md:6/10'
 		h='full'>
-		<Image
-			src={InfoImg}
+		<img
+			src='/static/header.jpg'
 			alt='Hero'
 			loading='eager'
 			class='object-cover xl:aspect-video rounded-md'

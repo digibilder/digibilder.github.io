@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-
+// Removed the import of Image from astro:assets
 const { imgUrl, direction } = Astro.props;
 ---
 
@@ -32,14 +31,9 @@ const { imgUrl, direction } = Astro.props;
 	}
 </style>
 
-<Image
+<img
 	src={imgUrl}
 	alt='Hero'
-	border='stone-800'
-	border-x='6'
-	border-y='2'
 	loading='eager'
-	h='26 sm:28 md:20 lg:24 xl:34'
-	w='26 sm:28 md:20 lg:24 xl:34'
-	class=`${direction} aspect-video object-cover`
+	class=`${direction} aspect-video object-cover h-26 sm:h-28 md:h-20 lg:h-24 xl:h-34 w-26 sm:w-28 md:w-20 lg:w-24 xl:w-34 border-stone-800 border-x-6 border-y-2`
 />
