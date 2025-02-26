@@ -1,0 +1,6 @@
+# Cloudflare API credentials
+# Rename this file to .dev.vars and fill in your credentials
+# NEVER commit this file to git
+
+CLOUDFLARE_API_TOKEN=your_api_token_here
+CLOUDFLARE_ACCOUNT_ID=your_account_id_here 

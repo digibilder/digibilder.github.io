@@ -11,7 +11,9 @@
     "wrangler:dev": "wrangler pages dev ./dist",
     "wrangler:deploy": "wrangler pages deploy ./dist",
     "wrangler:preview": "wrangler pages dev ./dist --remote",
-    "cf:build": "astro check && astro build && wrangler pages dev ./dist"
+    "cf:build": "astro check && astro build && wrangler pages dev ./dist",
+    "optimize:images": "cross-env NODE_ENV=production astro build --silent",
+    "build:prod": "node scripts/build-prod.js"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
@@ -26,6 +28,7 @@
   "devDependencies": {
     "@iconify/json": "^2.2.224",
     "@unocss/reset": "^65.4.3",
+    "cross-env": "^7.0.3",
     "unocss": "^0.61.0",
     "wrangler": "^3.110.0"
   }

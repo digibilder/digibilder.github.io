@@ -1,5 +1,4 @@
 ---
-// Removed the import of Image from astro:assets
 const { imgUrl, direction } = Astro.props;
 ---
 
@@ -31,9 +30,12 @@ const { imgUrl, direction } = Astro.props;
 	}
 </style>
 
+<!-- Use a regular img tag -->
 <img
 	src={imgUrl}
-	alt='Hero'
+	alt='Portfolio image'
+	width='340'
+	height='240'
 	loading='eager'
-	class=`${direction} aspect-video object-cover h-26 sm:h-28 md:h-20 lg:h-24 xl:h-34 w-26 sm:w-28 md:w-20 lg:w-24 xl:w-34 border-stone-800 border-x-6 border-y-2`
+	class={`${direction} aspect-video object-cover h-26 sm:h-28 md:h-20 lg:h-24 xl:h-34 w-26 sm:w-28 md:w-20 lg:w-24 xl:w-34 border-stone-800 border-x-6 border-y-2`}
 />

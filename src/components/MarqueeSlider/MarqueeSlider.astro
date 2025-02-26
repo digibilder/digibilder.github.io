@@ -1,13 +1,13 @@
 ---
 import MarqueeContent from '../MarqueeSlider/MarqueeContent.astro';
 
-// Use static paths instead of importing images
-const Img1 = '/static/portfolio/1.jpg';
-const Img2 = '/static/portfolio/2.jpg';
-const Img3 = '/static/portfolio/3.jpg';
-const Img4 = '/static/portfolio/4.jpg';
-const Img5 = '/static/portfolio/5.jpg';
-const Img6 = '/static/portfolio/6.jpg';
+// Use static image paths
+const img1 = '/static/portfolio/1.jpg';
+const img2 = '/static/portfolio/2.jpg';
+const img3 = '/static/portfolio/3.jpg';
+const img4 = '/static/portfolio/4.jpg';
+const img5 = '/static/portfolio/5.jpg';
+const img6 = '/static/portfolio/6.jpg';
 
 const { css } = Astro.props;
 ---
@@ -59,27 +59,27 @@ const { css } = Astro.props;
 		class='left-0 -top-1/2'>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img1}
+			imgUrl={img1}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img2}
+			imgUrl={img2}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img3}
+			imgUrl={img3}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img1}
+			imgUrl={img1}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img2}
+			imgUrl={img2}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img3}
+			imgUrl={img3}
 		/>
 	</div>
 	<div
@@ -88,27 +88,27 @@ const { css } = Astro.props;
 		class='top-0 left-1/2 -translate-1/2'>
 		<MarqueeContent
 			direction='down'
-			imgUrl={Img4}
+			imgUrl={img4}
 		/>
 		<MarqueeContent
 			direction='down'
-			imgUrl={Img6}
+			imgUrl={img6}
 		/>
 		<MarqueeContent
 			direction='down'
-			imgUrl={Img3}
+			imgUrl={img3}
 		/>
 		<MarqueeContent
 			direction='down'
-			imgUrl={Img4}
+			imgUrl={img4}
 		/>
 		<MarqueeContent
 			direction='down'
-			imgUrl={Img6}
+			imgUrl={img6}
 		/>
 		<MarqueeContent
 			direction='down'
-			imgUrl={Img3}
+			imgUrl={img3}
 		/>
 	</div>
 	<div
@@ -117,27 +117,27 @@ const { css } = Astro.props;
 		class='right-0 -top-1/2'>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img4}
+			imgUrl={img4}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img5}
+			imgUrl={img5}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img6}
+			imgUrl={img6}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img4}
+			imgUrl={img4}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img5}
+			imgUrl={img5}
 		/>
 		<MarqueeContent
 			direction='up'
-			imgUrl={Img6}
+			imgUrl={img6}
 		/>
 	</div>
 </div>

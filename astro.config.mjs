@@ -11,9 +11,7 @@ export default defineConfig({
 
   // Disable image optimization for Cloudflare compatibility
   image: {
-    service: {
-      entrypoint: 'astro/assets/services/noop'
-    }
+    service: { entrypoint: 'astro/assets/services/noop' }
   },
 
   integrations: [UnoCSS({
