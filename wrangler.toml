@@ -1,0 +1,28 @@
+# Wrangler configuration for Digibilder.se
+name = "digibilder"
+main = "./dist/_worker.js"
+
+# Route all requests to the Worker
+route = { pattern = "*", zone_name = "digibilder.se" }
+
+# Configure your pages project
+[site]
+bucket = "./dist"
+
+# Environment variables for development (add your own as needed)
+[vars]
+ENVIRONMENT = "development"
+
+# You can add additional configurations for different environments
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+# Configure your Workers KV namespaces if needed
+# [kv_namespaces]
+# MY_KV = { binding = "MY_KV", id = "your-kv-id-here" }
+
+# Configure your D1 database if needed
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "my-database"
+# database_id = "your-database-id-here" 

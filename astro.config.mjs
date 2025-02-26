@@ -13,5 +13,10 @@ export default defineConfig({
     injectReset: true
   }), sitemap()],
 
-  adapter: cloudflare()
+  adapter: cloudflare({
+    // Enable local runtime for better development experience
+    platformProxy: {
+      enabled: true,
+    },
+  })
 });
